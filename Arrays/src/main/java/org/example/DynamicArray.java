@@ -31,23 +31,19 @@ public class DynamicArray<String> {
     }
 
     public void insert(int index, String val) {
-        int p = size;
-
         // If size == capacity, create a new array and copy old elements into it
         if (size == capacity) {
             resize();
         }
 
         // Copy elements up
-        for (int i = size - index; i > 0; i--) {
-            array[p] = array[p - 1];
-            p--;
+        for (int i = size; i > index; i--) {
+            array[i] = array[i- 1];
         }
 
         // Insert element
         array[index] = val;
         size++;
-
     }
 
     public void resize() {
