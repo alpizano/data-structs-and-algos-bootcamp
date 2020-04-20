@@ -115,4 +115,13 @@ public class DynamicArrayTest {
         Assert.assertEquals("4", array.get(1));
         Assert.assertEquals("8", array.get(2));
     }
+
+    @Test
+    public void containsIsTrueTest() {
+        array.add("1");
+        array.add("2");
+        array.add("3");
+
+        Assert.assertTrue(array.contains("3"));
+    }
 }
