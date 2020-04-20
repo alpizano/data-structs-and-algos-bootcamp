@@ -21,7 +21,7 @@ public class DynamicArray<String> {
     }
 
     public void set(int index, String val) {
-
+        array[index] = val;
     }
 
     public void add(String val) {
@@ -34,17 +34,15 @@ public class DynamicArray<String> {
 
         // Check size
         if (size == capacity) {
-            //Object[] new_array = new Object[array.length * 2];
-            DynamicArray<String> new_array = new DynamicArray<>(array.length*2);
-            for (int i = size; i > 0; i--) {
+            Object[] new_array = new Object[capacity*2];
+
+            for (int i = size; i >= 0; i--) {
                 if (i == index) {
-                    // Insert elements
-                    new_array.set(index)= val;
+                    new_array[index] = val;
                 } else if (i > index) {
                     new_array[i] = array[i - 1];
                 } else if (i < index) {
                     new_array[i] = array[i];
-
                 }
             }
             array = new_array;
