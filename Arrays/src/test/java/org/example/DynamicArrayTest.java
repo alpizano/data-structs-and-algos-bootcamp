@@ -56,7 +56,7 @@ public class DynamicArrayTest {
     }
 
     @Test
-    public void insertTestOverCapacityAtEnd() {
+    public void insertTestAtCapacityAtEnd() {
         array.add("1");
         array.add("2");
         array.add("3");
@@ -71,6 +71,38 @@ public class DynamicArrayTest {
         Assert.assertEquals("4", array.get(3));
         Assert.assertEquals("5", array.get(4));
         Assert.assertEquals("42", array.get(5));
+    }
+
+    @Test
+    public void deleteTestAtCapacityAtBeginning() {
+        array.add("1");
+        array.add("2");
+        array.add("3");
+        array.add("4");
+        array.add("5");
+
+        array.delete(0);
+
+        Assert.assertEquals("2", array.get(0));
+        Assert.assertEquals("3", array.get(1));
+        Assert.assertEquals("4", array.get(2));
+        Assert.assertEquals("5", array.get(3));
+    }
+
+    public void deleteTestAtCapacityAtEnd() {
+        array.add("1");
+        array.add("2");
+        array.add("3");
+        array.add("4");
+        array.add("5");
+
+        array.delete(4);
+
+        Assert.assertEquals("1", array.get(0));
+        Assert.assertEquals("2", array.get(1));
+        Assert.assertEquals("3", array.get(2));
+        Assert.assertEquals("4", array.get(3));
+        Assert.assertEquals(null, array.get(4));
     }
 
     @Test

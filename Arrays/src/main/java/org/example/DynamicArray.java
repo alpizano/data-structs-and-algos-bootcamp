@@ -60,6 +60,21 @@ public class DynamicArray<String> {
         // Set array to point to new array
         array = new_array;
     }
+
+    public void delete(int index) {
+
+        if(size-1 == index) {
+            array[index] = null;
+        }
+        else {
+            // Copy elements down
+            for (int i = index; i < size - 1; i++) {
+                array[i] = array[i + 1];
+            }
+        }
+
+        size--;
+    }
 }
 
 
