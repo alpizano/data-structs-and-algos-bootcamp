@@ -21,9 +21,17 @@ public class DynamicArray<String> {
 
     public void insert(int index, String val) {
         // Check size
+        if (size == capacity) {
+           Object[] new_array = new Object[capacity*2];
+           array = new_array;
+        }
 
         // Copy elements
+        for(int i=size; i>= size-index; i--) {
+            array[i] = array[i-1];
+        }
 
         // Insert elements
+        array[index] = val;
     }
 }

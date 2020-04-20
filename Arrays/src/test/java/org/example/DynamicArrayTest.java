@@ -21,6 +21,6 @@ public class DynamicArrayTest {
 
     @Test
     public void insertTest() {
-        
+
     }
 }
