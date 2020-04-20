@@ -33,8 +33,8 @@ public class DynamicArrayTest {
         array.insert(2,"42");
 
         Assert.assertEquals("1", array.get(0));
-        Assert.assertEquals("42", array.get(1));
-        Assert.assertEquals("2", array.get(2));
+        Assert.assertEquals("2", array.get(1));
+        Assert.assertEquals("42", array.get(2));
         Assert.assertEquals("3", array.get(3));
         Assert.assertEquals("4", array.get(4));
     }
