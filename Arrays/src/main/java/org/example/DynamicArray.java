@@ -8,16 +8,17 @@ public class DynamicArray<String> {
     public DynamicArray() {
         array = new Object[0];
         size = 0;
-        capacity =0;
+        capacity = 0;
     }
+
     public DynamicArray(int capacity) {
         array = new Object[capacity];
         this.capacity = capacity;
         size = 0;
     }
 
-    public String get(int index){
-        return (String)array[index];
+    public String get(int index) {
+        return (String) array[index];
     }
 
     public void set(int index, String val) {
@@ -32,34 +33,37 @@ public class DynamicArray<String> {
     public void insert(int index, String val) {
         int p = size;
 
-        // Check size
+        // If size == capacity, create a new array and copy old elements into it
         if (size == capacity) {
-            Object[] new_array = new Object[capacity*2];
-
-            for (int i = size; i >= 0; i--) {
-                if (i == index) {
-                    new_array[index] = val;
-                } else if (i > index) {
-                    new_array[i] = array[i - 1];
-                } else if (i < index) {
-                    new_array[i] = array[i];
-                }
-            }
-            array = new_array;
-        }
-        else {
-            // Copy elements
-            for (int i = size - index; i > 0; i--) {
-                array[p] = array[p - 1];
-                p--;
-            }
-
-            // Insert elements
-            array[index] = val;
+            resize();
         }
 
-
+        // Copy elements up
+        for (int i = size - index; i > 0; i--) {
+            array[p] = array[p - 1];
+            p--;
         }
+
+        // Insert element
+        array[index] = val;
+        size++;
+
     }
+
+    public void resize() {
+        Object[] new_array = new Object[capacity * 2];
+
+        // Copy elements into new array
+        for (int i = 0; i < array.length; i++) {
+            new_array[i] = array[i];
+        }
+
+        // Save new capacity
+        capacity = capacity * 2;
+
+        // Set array to point to new array
+        array = new_array;
+    }
+}
 
 
