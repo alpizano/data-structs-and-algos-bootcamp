@@ -19,6 +19,11 @@ public class DynamicArray<String> {
         return (String)array[index];
     }
 
+    public void add(String val) {
+        array[size] = val;
+        size++;
+    }
+
     public void insert(int index, String val) {
         // Check size
         if (size == capacity) {
@@ -34,4 +39,5 @@ public class DynamicArray<String> {
         // Insert elements
         array[index] = val;
     }
+
 }
