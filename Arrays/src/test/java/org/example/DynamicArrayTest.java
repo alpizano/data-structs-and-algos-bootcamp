@@ -124,4 +124,13 @@ public class DynamicArrayTest {
 
         Assert.assertTrue(array.contains("3"));
     }
+
+    @Test
+    public void containsIsFalseTest() {
+        array.add("1");
+        array.add("2");
+        array.add("3");
+
+        Assert.assertFalse(array.contains("42"));
+    }
 }
