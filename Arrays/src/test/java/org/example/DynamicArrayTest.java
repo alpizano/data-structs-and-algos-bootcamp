@@ -4,9 +4,11 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class DynamicArrayTest {
+    DynamicArray<String> array;
+
     @BeforeClass
     public void setUp() {
-        DynamicArray<String> array = new DynamicArray();
+        array = new DynamicArray(10);
     }
 
     @Test
@@ -22,5 +24,12 @@ public class DynamicArrayTest {
     @Test
     public void insertTest() {
 
+    }
+
+    @Test
+    public void addTest() {
+        array.add("1");
+        array.add("4");
+        array.add("8");
     }
 }
