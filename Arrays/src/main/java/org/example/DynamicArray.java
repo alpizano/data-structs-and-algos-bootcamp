@@ -17,10 +17,12 @@ public class DynamicArray<String> {
         size = 0;
     }
 
+    // O(1)
     public String get(int index) {
         return (String) array[index];
     }
 
+    // O(1)
     public void set(int index, String val) {
         array[index] = val;
     }
@@ -30,6 +32,7 @@ public class DynamicArray<String> {
         size++;
     }
 
+    // O(n)
     public void insert(int index, String val) {
         // If size == capacity, create a new array and copy old elements into it
         if (size == capacity) {
@@ -61,6 +64,7 @@ public class DynamicArray<String> {
         array = new_array;
     }
 
+    // O(n)
     public void delete(int index) {
         // clear last element of array by setting equal to null
         if(size-1 == index) {
@@ -76,6 +80,7 @@ public class DynamicArray<String> {
         size--;
     }
 
+    // O(n)
     public boolean contains(String val)  {
         boolean containsVal = false;
 
@@ -87,6 +92,7 @@ public class DynamicArray<String> {
 
         return containsVal;
     }
+
 
     public boolean isEmpty() {
         if(size == 0) {
