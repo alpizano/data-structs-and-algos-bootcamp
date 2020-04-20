@@ -12,11 +12,16 @@ public class DynamicArray<String> {
     }
     public DynamicArray(int capacity) {
         array = new Object[capacity];
+        this.capacity = capacity;
         size = 0;
     }
 
     public String get(int index){
         return (String)array[index];
+    }
+
+    public void set(int index, String val) {
+
     }
 
     public void add(String val) {
@@ -25,19 +30,38 @@ public class DynamicArray<String> {
     }
 
     public void insert(int index, String val) {
+        int p = size;
+
         // Check size
         if (size == capacity) {
-           Object[] new_array = new Object[capacity*2];
-           array = new_array;
+            //Object[] new_array = new Object[array.length * 2];
+            DynamicArray<String> new_array = new DynamicArray<>(array.length*2);
+            for (int i = size; i > 0; i--) {
+                if (i == index) {
+                    // Insert elements
+                    new_array.set(index)= val;
+                } else if (i > index) {
+                    new_array[i] = array[i - 1];
+                } else if (i < index) {
+                    new_array[i] = array[i];
+
+                }
+            }
+            array = new_array;
+        }
+        else {
+            // Copy elements
+            for (int i = size - index; i > 0; i--) {
+                array[p] = array[p - 1];
+                p--;
+            }
+
+            // Insert elements
+            array[index] = val;
         }
 
-        // Copy elements
-        for(int i=size; i>= size-index; i--) {
-            array[i] = array[i-1];
-        }
 
-        // Insert elements
-        array[index] = val;
+        }
     }
 
-}
+
