@@ -75,6 +75,19 @@ public class DynamicArray<String> {
 
         size--;
     }
+
+    public boolean contains(String val)  {
+        boolean containsVal = false;
+
+        for(int i=0; i<array.length; i++) {
+            if(array[i] == val) {
+                containsVal = true;
+            }
+        }
+
+        return containsVal;
+    }
+
 }
 
 
