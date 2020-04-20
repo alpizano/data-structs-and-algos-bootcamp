@@ -62,7 +62,7 @@ public class DynamicArray<String> {
     }
 
     public void delete(int index) {
-
+        // clear last element of array by setting equal to null
         if(size-1 == index) {
             array[index] = null;
         }
@@ -86,6 +86,15 @@ public class DynamicArray<String> {
         }
 
         return containsVal;
+    }
+
+    public boolean isEmpty() {
+        if(size == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
 }
