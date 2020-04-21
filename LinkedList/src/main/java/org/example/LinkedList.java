@@ -18,9 +18,9 @@ public class LinkedList {
     private Node head;
 
     public void addFront(int val) {
-        Node node = new Node(val);
-        node.next = head;
-        head  = node;
+        Node newNode = new Node(val);
+        newNode.next = head;
+        head  = newNode;
     }
 
     public int getFirst() {
@@ -34,5 +34,16 @@ public class LinkedList {
             cursor=cursor.next;
         }
         return cursor.val;
+    }
+
+    public void addBack(int val) {
+        Node cursor = head.next;
+
+        while(cursor.next != null) {
+            cursor=cursor.next;
+        }
+
+        Node newNode = new Node(val);
+        cursor.next = newNode;
     }
 }
