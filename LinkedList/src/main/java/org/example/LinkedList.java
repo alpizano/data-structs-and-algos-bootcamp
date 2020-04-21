@@ -19,6 +19,13 @@ public class LinkedList {
 
     public void addFront(int val) {
         Node newNode = new Node(val);
+
+        // If head... set and return
+        if (head == null ) {
+            head = newNode;
+            return;
+        }
+
         newNode.next = head;
         head  = newNode;
     }
@@ -37,13 +44,23 @@ public class LinkedList {
     }
 
     public void addBack(int val) {
+         // Create new Node
+        Node newNode = new Node(val);
+
+        // If head... set and return
+        if (head == null ) {
+            head = newNode;
+            return;
+        }
+
+        // Start at the head
         Node cursor = head.next;
 
+        // Walk back node = null
         while(cursor.next != null) {
             cursor=cursor.next;
         }
 
-        Node newNode = new Node(val);
         cursor.next = newNode;
     }
 }
