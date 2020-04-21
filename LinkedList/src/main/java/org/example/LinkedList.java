@@ -9,6 +9,11 @@ public class LinkedList {
             this.val = val;
         }
     }
+
+    /**
+     * No constructor, so Java will create default no args constructor
+     */
+
     // Track head
     private Node head;
 
@@ -16,5 +21,9 @@ public class LinkedList {
         Node node = new Node(val);
         node.next = head;
         head  = node;
+    }
+
+    public int getFirst() {
+        return head.val;
     }
 }
