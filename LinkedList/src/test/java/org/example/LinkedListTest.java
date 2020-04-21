@@ -53,6 +53,10 @@ public class LinkedListTest {
         Assert.assertEquals(1, linkedList.size());
         linkedList.addBack(2);
         Assert.assertEquals(2, linkedList.size());
+    }
+
+    @Test
+    public void clear(){
 
     }
 }
