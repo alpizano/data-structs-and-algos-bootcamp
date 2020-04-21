@@ -29,12 +29,10 @@ public class LinkedList {
 
     public int getLast() {
         Node cursor = head.next;
-        Node tail = head;
 
-        while(cursor != null) {
+        while(cursor.next != null) {
             cursor=cursor.next;
-            tail=tail.next;
         }
-        return tail.val;
+        return cursor.val;
     }
 }
