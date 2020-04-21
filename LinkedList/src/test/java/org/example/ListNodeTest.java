@@ -3,8 +3,8 @@ package org.example;
 import org.junit.Before;
 import org.junit.Test;
 
-public class LinkedListTest {
-    LinkedList list;
+public class ListNodeTest {
+    ListNode list;
 
     @Before
     public void setUp() {
@@ -13,6 +13,6 @@ public class LinkedListTest {
 
     @Test
     public void Test() {
-        
+
     }
 }
