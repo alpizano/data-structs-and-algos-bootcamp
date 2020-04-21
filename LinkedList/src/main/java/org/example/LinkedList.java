@@ -34,10 +34,18 @@ public class LinkedList {
     }
 
     public int getFirst() {
+        if(head ==null) {
+            throw new IllegalStateException("Empty list!");
+        }
+
         return head.val;
     }
 
     public int getLast() {
+        if(head ==null) {
+            throw new IllegalStateException("Empty list!");
+        }
+
         Node cursor = head;
 
         while(cursor.next != null) {
@@ -82,12 +90,13 @@ public class LinkedList {
         Node cursor = head.next;
         Node prevCursor = head;
 
+        // Special condition where head points to target
         if(head.val == val) {
             head = head.next;
             size--;
             return;
         }
-        
+
         while(cursor != null) {
             if(cursor.val == val) {
                 prevCursor.next = cursor.next;
@@ -95,5 +104,6 @@ public class LinkedList {
             cursor = cursor.next;
             prevCursor = prevCursor.next;
         }
+        size--;
     }
 }
