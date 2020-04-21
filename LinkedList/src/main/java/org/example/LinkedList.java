@@ -77,4 +77,23 @@ public class LinkedList {
         head = null;
         size = 0;
     }
+
+    public void deleteValue(int val) {
+        Node cursor = head.next;
+        Node prevCursor = head;
+
+        if(head.val == val) {
+            head = head.next;
+            size--;
+            return;
+        }
+        
+        while(cursor != null) {
+            if(cursor.val == val) {
+                prevCursor.next = cursor.next;
+            }
+            cursor = cursor.next;
+            prevCursor = prevCursor.next;
+        }
+    }
 }
