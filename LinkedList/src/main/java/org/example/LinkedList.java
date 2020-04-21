@@ -90,6 +90,10 @@ public class LinkedList {
         Node cursor = head.next;
         Node prevCursor = head;
 
+        if(head == null) {
+            return;
+        }
+
         // Special condition where head points to target
         if(head.val == val) {
             head = head.next;
