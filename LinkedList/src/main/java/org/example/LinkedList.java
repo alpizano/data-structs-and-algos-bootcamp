@@ -72,4 +72,8 @@ public class LinkedList {
     public int size() {
         return size;
     }
+
+    public void clear() {
+        head = null;
+    }
 }
