@@ -66,7 +66,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void DeleteValue() {
+    public void DeleteValueInMiddle() {
         linkedList.addBack(1);
         linkedList.addBack(2);
         linkedList.addBack(3);
@@ -75,6 +75,21 @@ public class LinkedListTest {
 
         Assert.assertEquals(2, linkedList.size());
         Assert.assertEquals(1, linkedList.getFirst());
+        Assert.assertEquals(3, linkedList.getLast());
+    }
+
+    @Test
+    public void deleteValueAtHead() {
+
+        linkedList.addBack(1);
+        linkedList.addBack(2);
+        linkedList.addBack(3);
+
+
+        linkedList.deleteValue(1);
+
+        Assert.assertEquals(2, linkedList.size());
+        Assert.assertEquals(2, linkedList.getFirst());
         Assert.assertEquals(3, linkedList.getLast());
     }
 }
