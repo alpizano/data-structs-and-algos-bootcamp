@@ -26,4 +26,12 @@ public class LinkedList {
     public int getFirst() {
         return head.val;
     }
+
+    public int getLast() {
+        Node cursor = head;
+        while(cursor != null) {
+            cursor=cursor.next;
+        }
+        return cursor.val;
+    }
 }
