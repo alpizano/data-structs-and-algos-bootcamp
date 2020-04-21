@@ -16,6 +16,7 @@ public class LinkedList {
 
     // Track head
     private Node head;
+    private int size;
 
     public void addFront(int val) {
         Node newNode = new Node(val);
@@ -23,11 +24,13 @@ public class LinkedList {
         // If head... set and return
         if (head == null ) {
             head = newNode;
+            size++;
             return;
         }
 
         newNode.next = head;
         head  = newNode;
+        size++;
     }
 
     public int getFirst() {
@@ -35,7 +38,7 @@ public class LinkedList {
     }
 
     public int getLast() {
-        Node cursor = head.next;
+        Node cursor = head;
 
         while(cursor.next != null) {
             cursor=cursor.next;
@@ -50,11 +53,12 @@ public class LinkedList {
         // If head... set and return
         if (head == null ) {
             head = newNode;
+            size++;
             return;
         }
 
         // Start at the head
-        Node cursor = head.next;
+        Node cursor = head;
 
         // Walk back node = null
         while(cursor.next != null) {
@@ -62,5 +66,10 @@ public class LinkedList {
         }
 
         cursor.next = newNode;
+        size++;
+    }
+
+    public int size() {
+        return size;
     }
 }
