@@ -92,4 +92,14 @@ public class LinkedListTest {
         Assert.assertEquals(2, linkedList.getFirst());
         Assert.assertEquals(3, linkedList.getLast());
     }
+
+    @Test(expected = IllegalStateException.class)
+    public void deleteWithNullHead() {
+        linkedList.addBack(1);
+
+        linkedList.deleteValue(1);
+
+        Assert.assertEquals(0, linkedList.size());
+        linkedList.getFirst();
+    }
 }
