@@ -19,5 +19,7 @@ public class LinkedListTest {
         linkedList.addFront(3);
 
         Assert.assertEquals(3, linkedList.getFirst());
+        Assert.assertEquals(3, linkedList.getFirst());
+
     }
 }
