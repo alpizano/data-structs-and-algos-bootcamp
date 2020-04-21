@@ -27,4 +27,11 @@ public class LinkedListTest {
         linkedList.addFront(1);
         Assert.assertEquals(1, linkedList.getFirst());
     }
+
+    @Test
+    public void getLast() {
+        linkedList.addFront(33);
+        linkedList.addFront(42);
+        Assert.assertEquals(33, linkedList.getLast());
+    }
 }
