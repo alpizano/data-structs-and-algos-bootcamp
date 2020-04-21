@@ -30,7 +30,7 @@ public class LinkedList {
     public int getLast() {
         Node cursor = head.next;
         Node tail = head;
-        
+
         while(cursor != null) {
             cursor=cursor.next;
             tail=tail.next;
