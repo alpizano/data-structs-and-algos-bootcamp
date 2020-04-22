@@ -50,6 +50,10 @@ public class BigO {
 
     }
 
+    /**
+     * O(n^2) ; 3rd nested loop is O(1)
+     * @param array
+     */
     public void beep(int[] array) {
 
         for (int i = 0; i < array.length; i++) {
