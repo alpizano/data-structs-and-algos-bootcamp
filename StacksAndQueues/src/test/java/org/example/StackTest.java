@@ -14,10 +14,11 @@ public class StackTest {
 
     @Test
     public void push() {
+
         stack.push(1);
         stack.push(2);
         stack.push(3);
 
-        Assert.assertEquals();
+        Assert.assertEquals(3, stack.pop());
     }
 }
