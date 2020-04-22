@@ -19,11 +19,8 @@ public class Stack {
 
     // O(1)
     public void push(int val) {
-
        Node newNode = new Node(val);
-
        newNode.next = head;
-
        head = newNode;
     }
 
@@ -32,19 +29,15 @@ public class Stack {
         return head == null;
     }
 
-
     // O(1)
     public int pop() {
         if(head == null) {
             throw new EmptyStackException();
         }
+
         int val = head.val;
-
         head = head.next;
-
         return val;
     }
-
-
 
 }
