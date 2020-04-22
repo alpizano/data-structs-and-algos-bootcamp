@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.EmptyStackException;
+
 /**
  * Stack is FILO; First In Last Out
  */
@@ -17,8 +19,10 @@ public class Stack {
 
     // O(1)
     public void push(int val) {
+
        Node newNode = new Node(val);
-       newNode = head;
+
+       newNode.next = head;
 
        head = newNode;
     }
@@ -30,8 +34,14 @@ public class Stack {
 
     // O(1)
     public int pop() {
-        if(stack)
+        if(head == null) {
+            throw new EmptyStackException();
+        }
+        int val = head.val;
+
         head = head.next;
+
+        return val;
     }
 
 }
