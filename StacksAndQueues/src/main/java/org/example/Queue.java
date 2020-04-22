@@ -10,7 +10,21 @@ public class Queue {
         }
     }
 
+    // Need tail reference to be O(1) remove
     private Node head;
+    private Node tail;
 
-    
+    public void add(int val) {
+        Node newNode = new Node(val);
+
+        if(head == null) {
+            head = newNode;
+            tail = newNode;
+            return;
+        }
+        
+
+
+
+    }
 }
