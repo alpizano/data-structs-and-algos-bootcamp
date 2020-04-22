@@ -32,7 +32,7 @@ public class DynamicArray<String> {
         size++;
     }
 
-    // O(n)
+    // O(n+1) -> O(n)
     public void insert(int index, String val) {
         // If size == capacity, create a new array and copy old elements into it
         if (size == capacity) {
@@ -93,7 +93,7 @@ public class DynamicArray<String> {
         return containsVal;
     }
 
-
+    // O(1)
     public boolean isEmpty() {
         if(size == 0) {
             return true;
