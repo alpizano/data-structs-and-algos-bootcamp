@@ -40,4 +40,9 @@ public class Stack {
         return val;
     }
 
+    // O(1)
+    public int peek() {
+        return head.val;
+    }
+
 }
