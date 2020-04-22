@@ -27,6 +27,7 @@ public class Stack {
        head = newNode;
     }
 
+    // O(1)
     public boolean isEmpty() {
         return head == null;
     }
@@ -43,5 +44,7 @@ public class Stack {
 
         return val;
     }
+
+
 
 }
