@@ -18,6 +18,7 @@ public class LinkedList {
     private Node head;
     private int size;
 
+    // O(1)
     public void addFront(int val) {
         Node newNode = new Node(val);
 
@@ -33,6 +34,7 @@ public class LinkedList {
         size++;
     }
 
+    // O(1)
     public int getFirst() {
         if(head ==null) {
             throw new IllegalStateException("Empty list!");
@@ -41,6 +43,7 @@ public class LinkedList {
         return head.val;
     }
 
+    // O(n)
     public int getLast() {
         if(head ==null) {
             throw new IllegalStateException("Empty list!");
@@ -54,6 +57,7 @@ public class LinkedList {
         return cursor.val;
     }
 
+    // O(n)
     public void addBack(int val) {
          // Create new Node
         Node newNode = new Node(val);
@@ -77,15 +81,18 @@ public class LinkedList {
         size++;
     }
 
+    // O(1)
     public int size() {
         return size;
     }
 
+    // O(1)
     public void clear() {
         head = null;
         size = 0;
     }
 
+    // O(n)
     public void deleteValue(int val) {
         Node cursor = head.next;
         Node prevCursor = head;
