@@ -76,6 +76,8 @@ public class HashTable {
         int index = hashCode & 0x7fffffff % CAPACITY;
 
         System.out.println("index = " + index);
+
+        return index;
     }
 
     @Override
