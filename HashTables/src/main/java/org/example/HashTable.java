@@ -48,7 +48,25 @@ public class HashTable {
 
     // Get returns Value for Key parameter
     public String get(String key) {
+        String answer = "";
 
+        // get Hashed index
+        int index = getIndex(key);
+
+        // if value for index is null
+        if(data[index] == null) {
+            return null;
+        }
+
+        HashEntry entry = data[index];
+
+        while(entry.next != null) {
+            if(entry.key == key) {
+               answer = entry.val;
+            }
+            entry=entry.next;
+        }
+        return answer;
     }
 
     // Hashing algorithm logic inside getIndex
