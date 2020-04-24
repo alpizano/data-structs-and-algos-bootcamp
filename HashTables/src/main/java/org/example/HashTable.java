@@ -25,8 +25,24 @@ public class HashTable {
     }
 
     public void put(String key, String val) {
-        // Get index
+        // Get hashed index first
         int index = getIndex(key);
+
+        // Array index is null case
+        if(data[index] == null) {
+            data[index] = new HashEntry(key,val);
+        }
+
+        // Collision case
+        // Get the Linked List in index
+        HashEntry entry = data[index];
+
+        while(entry.next != null) {
+            entry = entry.next;
+        }
+
+        // Add HashEntry to end of LinkedList
+        entry.next = new HashEntry(key,val);
 
     }
 
