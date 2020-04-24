@@ -12,6 +12,7 @@ public class HashTable {
         public HashEntry(String key, String val) {
             this.key = key;
             this.val = val;
+            this.next = null;
         }
     }
 
@@ -24,23 +25,27 @@ public class HashTable {
 
     public void put(String key, String val) {
         // Get hashed index first
-        int index = getIndex(key);
+        int hashIndex = getHashIndex(key);
+
+        // Create new HashEntry
+        HashEntry entry = new HashEntry(key,val);
 
         // Array index is null case
-        if(data[index] == null) {
-            data[index] = new HashEntry(key,val);
+        if(data[hashIndex] == null) {
+            data[hashIndex] = entry;
         }
+        else {
+            // Collision case
+            // Get the Linked List in index
+            HashEntry entryList = data[hashIndex];
 
-        // Collision case
-        // Get the Linked List in index
-        HashEntry entry = data[index];
+            while (entryList.next != null) {
+                entryList = entryList.next;
+            }
 
-        while(entry.next != null) {
-            entry = entry.next;
+            // Add HashEntry to end of LinkedList
+            entryList.next = entry;
         }
-
-        // Add HashEntry to end of LinkedList
-        entry.next = new HashEntry(key,val);
 
     }
 
@@ -49,7 +54,7 @@ public class HashTable {
         String answer = "";
 
         // get Hashed index
-        int index = getIndex(key);
+        int index = getHashIndex(key);
 
         // if value for index is null
         if(data[index] == null) {
@@ -68,12 +73,12 @@ public class HashTable {
     }
 
     // Hashing algorithm logic inside getIndex
-    private int getIndex(String key) {
+    private int getHashIndex(String key) {
         int hashCode = key.hashCode();
-        System.out.println("hashCode=");
+        System.out.println("hashCode= "+hashCode + " for key: " + key + " is");
 
         // Convert to index. Bit wise AND to force positive index
-        int index = hashCode & 0x7fffffff % CAPACITY;
+        int index = (hashCode & 0x7fffffff) % CAPACITY;
 
         System.out.println("index = " + index);
 
