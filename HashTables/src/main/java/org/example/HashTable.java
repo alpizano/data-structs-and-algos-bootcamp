@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class HashTable {
     // Linked List for Collisions
-    private static class HashEntry {
+     class HashEntry {
         String key;
         String val;
         HashEntry next;
@@ -37,14 +37,18 @@ public class HashTable {
         else {
             // Collision case
             // Get the Linked List in index
-            HashEntry entryList = data[hashIndex];
+            System.out.println("collision");
+            HashEntry list = data[hashIndex];
 
-            while (entryList.next != null) {
-                entryList = entryList.next;
+            while (list.next != null) {
+                list = list.next;
             }
+            System.out.println("key -> " + list.key + " val -> " + list.val);
 
             // Add HashEntry to end of LinkedList
-            entryList.next = entry;
+            list.next = entry;
+            System.out.println("key -> " + list.next.key + " val -> " + list.next.val);
+
         }
 
     }
@@ -54,20 +58,21 @@ public class HashTable {
         String answer = "";
 
         // get Hashed index
-        int index = getHashIndex(key);
+        int hashIndex = getHashIndex(key);
 
         // if value for index is null
-        if(data[index] == null) {
+        if(data[hashIndex] == null) {
             return null;
         }
 
-        HashEntry entry = data[index];
+        HashEntry entry = data[hashIndex];
 
         while(entry.next != null) {
-            if(entry.key == key) {
+            if(entry.key.equals(key)) {
                answer = entry.val;
             }
-            entry=entry.next;
+            entry 2
+                =  entry.next;
         }
         return answer;
     }
@@ -81,7 +86,7 @@ public class HashTable {
         int index = (hashCode & 0x7fffffff) % CAPACITY;
 
         System.out.println("index = " + index);
-
+        System.out.println();
         return index;
     }
 
