@@ -89,6 +89,13 @@ public class HashTable {
 
         System.out.println("hashCode = "+hashCode + " for key: " + key + " is" + " index =" + index);
         System.out.println();
+
+        // Force collision
+        if (key.equals("John Smith") || key.equals("Sandra Doe")) {
+            index = 4;
+        }
+
+
         return index;
     }
 
