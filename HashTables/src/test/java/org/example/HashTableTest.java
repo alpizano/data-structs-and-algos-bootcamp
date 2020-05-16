@@ -14,12 +14,18 @@ public class HashTableTest {
 
     @Test
     public void verifyPut() {
-        table.put("car", "toyota");
-        table.put("game", "mechwarrior");
-        table.put("color","green");
+        table.put("John Smith", "521-1234");
+        table.put("Lisa Smith", "521-8976");
+        table.put("Sam Doe","521-5030");
+        table.put("Sandra Dee","521-9655");
+        table.put("Ted Baker","418-4165");
 
-        Assert.assertEquals("toyota", table.get("car"));
-        Assert.assertEquals("mechwarrior", table.get("game"));
-       Assert.assertEquals("green", table.get("color"));
+        System.out.println("-------------------------------");
+
+        Assert.assertEquals("521-1234", table.get("John Smith"));
+        Assert.assertEquals("521-8976", table.get("Lisa Smith"));
+       Assert.assertEquals("521-5030", table.get("Sam Doe"));
+        Assert.assertEquals("521-9655", table.get("Sandra Dee"));
+        Assert.assertEquals("418-4165", table.get("Ted Baker"));
     }
 }

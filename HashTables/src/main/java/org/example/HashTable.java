@@ -16,7 +16,7 @@ public class HashTable {
         }
     }
 
-    private int CAPACITY = 10;
+    private int CAPACITY = 16;
     HashEntry[] data;
 
     public HashTable() {
@@ -83,17 +83,16 @@ public class HashTable {
     private int generateHashIndex(String key) {
         int hashCode = key.hashCode();
 
-
         // Convert to index. Bit wise AND to force positive index
         int index = (hashCode & 0x7fffffff) % CAPACITY;
 
-        System.out.println("hashCode = "+hashCode + " for key: " + key + " is" + " index =" + index);
-        System.out.println();
-
         // Force collision
-        if (key.equals("John Smith") || key.equals("Sandra Doe")) {
+        if (key.equals("John Smith") || key.equals("Sandra Dee")) {
             index = 4;
         }
+
+        System.out.println("hashCode = "+hashCode + ", key: " + key + "," + " index = " + index);
+        System.out.println();
 
 
         return index;
