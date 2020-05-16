@@ -24,31 +24,34 @@ public class HashTable {
     }
 
     public void put(String key, String val) {
-        // Get hashed index first
-        int hashIndex = getHashIndex(key);
+        // Generate the hashed index
+        int hashIndex = generateHashIndex(key);
 
         // Create new HashEntry
         HashEntry entry = new HashEntry(key,val);
 
-        // Array index is null case
+        // Array index is empty case - add entry
         if(data[hashIndex] == null) {
             data[hashIndex] = entry;
         }
+        // Collision case
         else {
-            // Collision case
             // Get the Linked List in index
-            System.out.println("collision");
+            System.out.println("COLLISION DETECTED");
             HashEntry list = data[hashIndex];
 
+            // Add to end of list O(n)
+            // Why not add to head of list O(1)?
+            System.out.println("Linked List contains: ");
             while (list.next != null) {
+                System.out.println("inloop: key -> " + list.key + " val -> " + list.val);
                 list = list.next;
             }
-            System.out.println("key -> " + list.key + " val -> " + list.val);
-
+            System.out.println("outloop: key -> " + list.key + " val -> " + list.val);
             // Add HashEntry to end of LinkedList
             list.next = entry;
-            System.out.println("key -> " + list.next.key + " val -> " + list.next.val);
-
+            System.out.println("added to end: key -> " + list.next.key + " val -> " + list.next.val);
+            System.out.println();
         }
 
     }
@@ -58,7 +61,7 @@ public class HashTable {
         String answer = "";
 
         // get Hashed index
-        int hashIndex = getHashIndex(key);
+        int hashIndex = generateHashIndex(key);
 
         // if value for index is null
         if(data[hashIndex] == null) {
@@ -67,25 +70,24 @@ public class HashTable {
 
         HashEntry entry = data[hashIndex];
 
-        while(entry.next != null) {
+        while(entry != null) {
             if(entry.key.equals(key)) {
                answer = entry.val;
             }
-            entry 2
-                =  entry.next;
+            entry=  entry.next;
         }
         return answer;
     }
 
     // Hashing algorithm logic inside getIndex
-    private int getHashIndex(String key) {
+    private int generateHashIndex(String key) {
         int hashCode = key.hashCode();
-        System.out.println("hashCode= "+hashCode + " for key: " + key + " is");
+
 
         // Convert to index. Bit wise AND to force positive index
         int index = (hashCode & 0x7fffffff) % CAPACITY;
 
-        System.out.println("index = " + index);
+        System.out.println("hashCode = "+hashCode + " for key: " + key + " is" + " index =" + index);
         System.out.println();
         return index;
     }
