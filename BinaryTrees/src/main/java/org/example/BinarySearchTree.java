@@ -14,15 +14,16 @@ public class BinarySearchTree {
 
     Node root;
 
+    public BinarySearchTree() {
+        root = null;
+    }
 
     private Node find(Node node, int key) {
-        if(node == null || node.key == key) {
+        if (node == null || node.key == key) {
             return node;
-        }
-        else if(node.key < key) {
+        } else if (node.key < key) {
             return find(node.left, key);
-        }
-        else if(node.key > key) {
+        } else if (node.key > key) {
             return find(node.right, key);
         }
 
