@@ -18,6 +18,14 @@ public class BinarySearchTree {
         root = null;
     }
 
+    public String find(int key) {
+        // Start at the root node
+        Node node = find(root,key);
+
+        // Ternary operator. Return null is node = null is true, if false return node.val
+        return node == null ? null : node.val;
+    }
+
     private Node find(Node node, int key) {
         if (node == null || node.key == key) {
             return node;
