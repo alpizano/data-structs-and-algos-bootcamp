@@ -26,7 +26,7 @@ public class BinarySearchTree {
         return node == null ? null : node.val;
     }
 
-    private Node find(Node node, int key) {
+    public Node find(Node node, int key) {
         if (node == null || node.key == key) {
             return node;
         } else if (node.key < key) {
@@ -39,11 +39,11 @@ public class BinarySearchTree {
         return null;
     }
 
-    private void insert(int key, String val) {
+    public void insert(int key, String val) {
         Node node = insert(root, key, val);
     }
 
-    private Node insert(Node node, int key,String val) {
+    public Node insert(Node node, int key,String val) {
         Node newNode = new Node(key, val);
         if (node == null || node.left == null || node.right == null) {
             return node = newNode;
