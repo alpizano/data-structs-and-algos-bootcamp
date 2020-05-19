@@ -38,4 +38,21 @@ public class BinarySearchTree {
         // If key is not found in BST, return null
         return null;
     }
+
+    private void insert(int key, String val) {
+        Node node = insert(root, key, val);
+    }
+
+    private Node insert(Node node, int key,String val) {
+        Node newNode = new Node(key, val);
+        if (node == null || node.left == null || node.right == null) {
+            return node = newNode;
+        } else if (node.key < key) {
+            return insert(node.left, key,val);
+        } else if (node.key > key) {
+            return insert(node.right, key, val);
+        }
+        return node;
+    }
+
 }
