@@ -1,8 +1,15 @@
 package org.example;
 
 
+import org.junit.Before;
+import org.junit.Test;
+
 public class BinarySearchTreeTest {
-    public static void main(String[] args) {
-        System.out.println("Hello world");
+    BinarySearchTree bst;
+
+    @Before
+    public void setUp() {
+        bst = new BinarySearchTree();
     }
+
 }
