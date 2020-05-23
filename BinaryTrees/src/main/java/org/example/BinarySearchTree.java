@@ -29,9 +29,9 @@ public class BinarySearchTree {
     public Node find(Node node, int key) {
         if (node == null || node.key == key) {
             return node;
-        } else if (node.key < key) {
+        } else if ( key < node.key) {
             return find(node.left, key);
-        } else if (node.key > key) {
+        } else if (key > node.key) {
             return find(node.right, key);
         }
 
@@ -49,9 +49,11 @@ public class BinarySearchTree {
         if (node == null) {
             node = newNode;
             return node;
-        } else if (node.key < key) {
+        }
+
+        if (key < node.key) {
             node.left =  insert(node.left, key,val);
-        } else if (node.key > key) {
+        } else if (key > node.key) {
             node.right = insert(node.right, key, val);
         }
         return node;
