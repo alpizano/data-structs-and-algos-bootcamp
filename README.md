@@ -1,4 +1,5 @@
-# The FAANG Interview
+# Bootcamp
+This repository will document my journey of obtaining of computer science fundamentals, such as data structures and algorithms. I will add the most relevant and important imformation that I find on my journey, and document it here in the readme. The subsequent repository directories will contain the codebase for implementing these datastructures and algorithms. Thank you for visiting!
 
 ## Data Structures & Algorithms
 ### `Big O Notation`
