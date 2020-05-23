@@ -40,17 +40,19 @@ public class BinarySearchTree {
     }
 
     public void insert(int key, String val) {
-        Node node = insert(root, key, val);
+        root = insert(root, key, val);
     }
 
     public Node insert(Node node, int key,String val) {
         Node newNode = new Node(key, val);
-        if (node == null || node.left == null || node.right == null) {
-            return node = newNode;
+
+        if (node == null) {
+            node = newNode;
+            return node;
         } else if (node.key < key) {
-            return insert(node.left, key,val);
+            node.left= insert(node.left, key,val);
         } else if (node.key > key) {
-            return insert(node.right, key, val);
+            node.right= insert(node.right, key, val);
         }
         return node;
     }
