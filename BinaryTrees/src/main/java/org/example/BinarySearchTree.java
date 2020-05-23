@@ -50,9 +50,9 @@ public class BinarySearchTree {
             node = newNode;
             return node;
         } else if (node.key < key) {
-            return  insert(node.left, key,val);
+            node.left =  insert(node.left, key,val);
         } else if (node.key > key) {
-            return insert(node.right, key, val);
+            node.right = insert(node.right, key, val);
         }
         return node;
     }
