@@ -18,21 +18,21 @@ public class BinarySearchTree {
         root = null;
     }
 
-    public String find(int key) {
+    public String find(int target) {
         // Start at the root node
-        Node node = find(root,key);
+        Node node = find(root,target);
 
         // Ternary operator. Return null is node = null is true, if false return node.val
         return node == null ? null : node.val;
     }
 
-    public Node find(Node node, int key) {
-        if (node == null || node.key == key) {
+    public Node find(Node node, int target) {
+        if (node == null || node.key == target) {
             return node;
-        } else if ( key < node.key) {
-            return find(node.left, key);
-        } else if (key > node.key) {
-            return find(node.right, key);
+        } else if ( target < node.key) {
+            return find(node.left, target);
+        } else if (target > node.key) {
+            return find(node.right, target);
         }
 
         // If key is not found in BST, return null
