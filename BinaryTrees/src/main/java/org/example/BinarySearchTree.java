@@ -53,7 +53,7 @@ public class BinarySearchTree {
 
         if (key < node.key) {
             node.left =  insert(node.left, key,val);
-        } else if (key > node.key) {
+        } else {
             node.right = insert(node.right, key, val);
         }
         return node;
