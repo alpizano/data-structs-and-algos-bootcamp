@@ -10,6 +10,15 @@ public class BinarySearchTree {
             this.key = key;
             this.val = val;
         }
+
+        public Node min() {
+            if (left == null) {
+                return this;
+            }
+            else {
+                return left.min();
+            }
+        }
     }
 
     Node root;
@@ -57,6 +66,27 @@ public class BinarySearchTree {
             node.right = insert(node.right, key, val);
         }
         return node;
+    }
+
+    public String getMin(Node node) {
+        return helper(node).val;
+    }
+
+    public Node helper(Node node) {
+        Node answer;
+        // 1. empty tree
+        // 2. just root node
+        // 3. full tree
+        if(node == null) {
+            return null;
+        }
+        else if(node.left == null) {
+            return node;
+        }
+        else {
+            answer = helper(node.left);
+        }
+        return answer;
     }
 
 }

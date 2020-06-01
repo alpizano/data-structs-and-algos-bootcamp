@@ -33,7 +33,19 @@ public class BinarySearchTreeTest {
         Assert.assertEquals(null, bst.find(99));
 
 //        bst.prettyPrint();
+    }
 
+    @Test
+    public void verifyMin() {
+        bst.insert(5,"e");
+        bst.insert(3,"c");
+        bst.insert(2,"b");
+        bst.insert(4,"d");
+        bst.insert(7,"g");
+        bst.insert(6,"f");
+        bst.insert(8,"h");
+
+        Assert.assertEquals("b", bst.getMin(bst.root));
 
     }
 
