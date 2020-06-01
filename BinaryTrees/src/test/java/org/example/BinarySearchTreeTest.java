@@ -46,7 +46,39 @@ public class BinarySearchTreeTest {
         bst.insert(8,"h");
 
         Assert.assertEquals("b", bst.getMin(bst.root));
+    }
 
+    @Test
+    public void deleteNoChild() {
+        bst.insert(5, "e");
+        bst.insert(3, "c");
+        bst.insert(2, "b");
+        bst.insert(4, "d");
+        bst.insert(7, "g");
+        bst.insert(6, "f");
+        bst.insert(8, "h");
+    }
+
+    @Test
+    public void deleteOneChild() {
+        bst.insert(5, "e");
+        bst.insert(3, "c");
+        bst.insert(2, "b");
+        bst.insert(4, "d");
+        bst.insert(7, "g");
+        bst.insert(6, "f");
+        bst.insert(8, "h");
+    }
+
+    @Test
+    public void deleteTwoChild() {
+        bst.insert(5, "e");
+        bst.insert(3, "c");
+        bst.insert(2, "b");
+        bst.insert(4, "d");
+        bst.insert(7, "g");
+        bst.insert(6, "f");
+        bst.insert(8, "h");
     }
 
 }
